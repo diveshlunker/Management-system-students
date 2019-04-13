@@ -6,4 +6,5 @@
 		echo "Connection not successful";
 	}
 	
+	mysqli_set_charset($con,"utf8");
 ?>

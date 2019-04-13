@@ -40,8 +40,8 @@ include('dbcon.php');
 
 if(isset($_POST['login'])){
     
-    $username = $_POST['uname'];
-    $password = $_POST['pass'];
+    $username = mysqli_real_escape_string($con,$_POST['uname']);
+    $password = mysqli_real_escape_string($con,$_POST['pass']);
     
     $qry = "SELECT * FROM `admin` WHERE `username` = '$username' AND `password` = '$password'";
     
