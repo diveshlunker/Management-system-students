@@ -61,8 +61,8 @@
 
 if(isset($_POST['submit'])){
     
-    $standard= $_POST['std'];
-    $rollno = $_POST['rollno'];
+    $standard= htmlspecialchars($_POST['std'], ENT_QUOTES);
+    $rollno = htmlspecialchars($_POST['rollno'], ENT_QUOTES);
     
     include('dbcon.php');
     include('function.php');
