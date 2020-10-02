@@ -16,26 +16,26 @@ function showdetails($standard,$rollno){
                 <th colspan="3">Student Details</th>
             </tr>
             <tr>
-                <td rowspan="5"><img src="dataimg/<?php echo $data['image']; ?>"/></td>
+                <td rowspan="5"><img src="dataimg/<?php echo htmlspecialchars($data['image'], ENT_QUOTES); ?>"/></td>
                 <th>Roll No</th>
-                <td align="center"><?php echo $data['rollno'] ?></td>
+                <td align="center"><?php echo htmlspecialchars($data['rollno'], ENT_QUOTES); ?></td>
                 
            </tr>
             <tr>
                 <th>Name</th>
-                <td align="center"><?php echo $data['name'] ?></td>
+                <td align="center"><?php echo htmlspecialchars($data['name'], ENT_QUOTES); ?></td>
             </tr>
             <tr>
                 <th>City</th>
-                <td align="center"><?php echo $data['city'] ?></td>
+                <td align="center"><?php echo htmlspecialchars($data['city'], ENT_QUOTES); ?></td>
             </tr>
             <tr>
                 <th>Parents Contact no.</th>
-                <td align="center"><?php echo $data['pcont'] ?> </td>
+                <td align="center"><?php echo htmlspecialchars($data['pcont'], ENT_QUOTES); ?> </td>
             </tr>
             <tr>
                 <th>Standard</th>
-                <td align="center"><?php echo $data['standard'] ?> </td>
+                <td align="center"><?php echo htmlspecialchars($data['standard'], ENT_QUOTES); ?> </td>
             </tr>
             
 
