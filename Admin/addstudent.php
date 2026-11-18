@@ -70,9 +70,16 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
     $pcon = $_POST['pcon'];
     $std = $_POST['standard'];
-    $imagename = $_FILES['simg']['name'];
+    $imagename = basename($_FILES['simg']['name']);
     $tempname = $_FILES['simg']['tmp_name'];
-        
+
+    $ext = strtolower(pathinfo($imagename, PATHINFO_EXTENSION));
+    $allowed = array('jpg', 'jpeg', 'png', 'gif');
+    if(!in_array($ext, $allowed, true)){
+        echo "<script>alert('Invalid image type');</script>";
+        exit;
+    }
+
     move_uploaded_file($tempname,"../dataimg/$imagename");
     
     
